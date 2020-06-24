@@ -141,6 +141,8 @@ public class ExampleInventory extends FayInv {
 
 new ExampleInventory().open(player); // To open the inventory
 
+```
+
 > Create item simply
 
 ```java
