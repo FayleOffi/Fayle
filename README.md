@@ -280,19 +280,6 @@ public class Commands implements JsonPersist {
 
 ```
 
-> Register Json persist
-
-```java
-
-  @Override
-   public void load() {
-        registerPersist(JsonPersist persist);
-    }
-
-
-```
-
-
 ---
 
 ## How to install ?
@@ -306,5 +293,7 @@ public class Commands implements JsonPersist {
 ### Setup
 
 > Required Spigot
+
+> Go in the config.yml in Fayle in your plugins folder and put your token
 
 ---
