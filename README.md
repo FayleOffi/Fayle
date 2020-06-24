@@ -108,7 +108,7 @@ public class ExampleInventory extends FayInv {
         setItem(22, new FayBuilder(Material.IRON_SWORD), e -> e.getWhoClicked().sendMessage("You clicked on the sword"));
 
         // Add some blocks to the borders
-        setItems(getBorders(), new FayBuilder(Material.LAPIS_BLOCK).name(" "));
+        setItems(getBorders(), new FayBuilder(Material.LAPIS_BLOCK).setName("§cI love you"));
 
         // Add a simple item to prevent closing the inventory
         setItem(34, new FayBuilder(Material.BARRIER).setName(ChatColor.RED + "Prevent close"), e -> {
