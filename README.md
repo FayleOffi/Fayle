@@ -4,8 +4,6 @@
 
 > Simple Main Class
 
-> Create connexion with Jedis for Redis quickly(unstable)
-
 > Register your listeners / commands quickly
 
 > Log system
@@ -31,6 +29,8 @@
 > Give a stuff
 
 > Json persist
+
+> Create a json file simply
 
 ## Developpers
 
@@ -72,8 +72,10 @@ public class Main extends Fay {
 
 ```java 
 
-addCommands(FayCommands faycommands)
+addCommands(Object fayCommands)
+addCommands(CommandExecutor executor)
 addListeners(Listener listener)
+addListeners(FayListener listener)
 
 ```
 
@@ -169,30 +171,13 @@ System.out.println("In work !");
 
 ```java
 
-public class Commands extends FayCommands{
-    @Override
-    public String getName() {
-        return "mycommands";
-    }
+public class Test extends FCommand {
 
+    @Command(name = "test", permissionNode = "dd", isConsole = false)
     @Override
-    public String getDescription() {
-        return "This is a command for test !";
-    }
-
-    @Override
-    public String getSyntaxe() {
-        return "§c/mycommands";
-    }
-
-    @Override
-    public String getAliases() {
-        return "";
-    }
-
-    @Override
-    public void perform(Player player, String[] args) {
-
+    public void onCommand(CommandArgs args) {
+        String args1 = args.getArgs(0);
+        Player player = args.getPlayer();
     }
 }
 
@@ -285,6 +270,12 @@ public class Commands implements JsonPersist {
 }
 
 ```
+
+> Create a json file simply
+
+```java
+
+FayJson.createJson(File file, JSONObject jsonObject) throws IOException;
 
 ---
 
